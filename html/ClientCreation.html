@@ -15,6 +15,9 @@
 
 #smallfont {
    font-size: 100%; 
+   padding-left: 0px;
+   padding-top: 0px;
+   padding-bottom: 0px;
 }
 </style>
   <title>Create a Client Account</title>
@@ -48,16 +51,49 @@
     </nav>
 
  <div class="jumbotron" align = "left" >
+  <h1>Create a Client Account</h1>
  	<div class = "bodycontainer">
-      <form name "ClientForm">
-        <p id = "smallfont" >Name:
-        <div id="WorkDescription">
+      <form name "ClientForm" onsubmit = "return validateForm()" method = "post">
+        <p>
+        <div id="Form">
+          <p id = "smallfont">Name</p>
+        	<textarea id = "ClientName" placeholder = "Name" rows = '1' cols = '100'></textarea>
+          <p id="smallfont">Number</p>
+          <textarea id = "ClientNumber" placeholder = "Contact Number (optional)" rows = '1' cols = '100'></textarea>
+          <p id="smallfont">Email</p>
+          <textarea id = "ClientEmail" placeholder = "Email" rows = '1' cols = '100'></textarea>
+          <p id="smallfont">User</p>
+        	<textarea id = "ClientUser" placeholder = "Username" rows = '1' cols = '100'></textarea>
+          <p id="smallfont">Password</p>
+          <textarea id = "ClientPass" placeholder = "Password" rows = '1' cols = '100'></textarea>
+          <p id="smallfont">Confirm Password</p>
+          <textarea id = "ClientPassConfirm" placeholder = "Confirm Password" rows = '1' cols = '100'></textarea>
+          <p id="smallfont">About</p>
+          <textarea id = "ClientAbout" placeholder = "Say something about yourself!" rows = '4' cols = '100'></textarea>
+<div><strong>Upload a Profile Picture</strong></div>
 
-        	<textarea name = "WorkDescription" placeholder = "Name" rows = '1' cols = '100'></textarea>
+<input type="file" onchange="previewFile()"><br>
+<img src="" height="50" alt="Image preview...">
 
+<script>
+   function previewFile(){
+       var preview = document.querySelector('img'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
 
-        	
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
 
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+       } else {
+           preview.src = "";
+       }
+  }
+
+  previewFile();  //calls the function named previewFile()
+  </script>
       <!--     <form class="navbar-form navbar-left">
             <div class="formdescript-group" align = "left" >
             	
@@ -72,11 +108,7 @@
         </p>
     
 
-      <p>Compensation:</p>
-      <div>
-      <textarea name = "Compensation" placeholder = "What are you offering your worker?" rows = '2' cols = '50'></textarea>
-  </div>
-
+  
         <!-- <p> <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-left">
             <div class="formdescript-group" align = "left" >
@@ -85,23 +117,21 @@
         </form>
         </div>
     </p> -->
-    <p>Time and Date:</p>
-    <div>
-      <textarea name = "Date" placeholder = "When?" rows = '1' cols = '50'></textarea>
-</div>
+   
+      
+
     
-      <p>Location:</p>
-      <div>
-      <textarea name = "Location" placeholder = "Where?" rows = '1' cols = '50'></textarea>
-  </div>
+ 
 </form>
-<br></br>
 
  <!-- <div id = "submit">
        <button type="submit" class="btn btn-success">Submit</button>
    </div> -->
  <div>
-       <button type="submit" class="btn btn-success" onclick = "submitForm()">Submit</button>
+       <button type="submit" class="btn btn-success" action = "form_action.asp" onclick = "submitForm()">Submit</button>
+   </div>
+   <div>
+       <button type="button" class="btn btn-success" onclick = "validateForm()">Validate!</button>
    </div>
 </div>
 
@@ -111,6 +141,37 @@ function submitForm(){
    document.getElementById("ClientForm").submit();
 }
 
+</script>
+<script>
+function validateForm() {
+    var x = document.getElementById("ClientName").value;
+    if (x==null || x=="") {
+        window.alert("First name must be filled out");
+       // return false;
+     }
+    var y = document.getElementById("ClientEmail").value;
+    if (y==null || y=="") {
+        window.alert("Email must be filled out");
+        //return false;
+    }
+    var z = document.getElementById("ClientUser").value;
+    if (z==null || z=="") {
+        window.alert("Username must be filled out");
+      //  return false;
+    }
+
+      var a = document.getElementById("ClientPass").value;
+      var aconfirm = document.getElementById("ClientPassConfirm").value;
+    if (a==null || a==""|| a != aconfirm) {
+        window.alert("Password must be filled out and match the confirmation");
+      //  return false;
+    }
+      var b = document.getElementById("ClientAbout").value;
+    if (b==null || b=="") {
+        window.alert("Say SOMETHING about yourself!");
+    //    return false;
+    }
+}
 </script>
 </body>
 </html> 

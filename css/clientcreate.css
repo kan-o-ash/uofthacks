@@ -78,6 +78,8 @@ dfn {
 h1 {
   margin: .67em 0;
   font-size: 2em;
+  padding-left: 135px;
+  padding-top: 15px;
 }
 mark {
   color: #000;
@@ -3529,8 +3531,8 @@ tbody.collapse.in {
 div {
     padding-top: 0px;
     padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-left: 0px;
 
 }
 .dropdown-menu .divider {

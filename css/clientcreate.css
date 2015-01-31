@@ -12,14 +12,16 @@ html {
 }
 body {
   margin: 0;
+
 }
+
 p {
+  font-size: 50%;
    padding-top: 25px;
     padding-right: 50px;
     padding-bottom: 25px;
     padding-left: 50px;;
 }
-
 form {
    padding-top: 0px;
     padding-right: 0px;

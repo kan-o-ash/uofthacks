@@ -4,7 +4,7 @@
 
 <head>
 <style>
-/*#submit {
+/*#smallfont {
 	   line-height:10px;
     background-color:#EEEEEE;
     height:100px;
@@ -12,6 +12,10 @@
     float:right;
     padding:0px;	
 }*/
+
+#smallfont {
+   font-size: 100%; 
+}
 </style>
   <title>Create a Client Account</title>
   <link href="css/clientcreate.css" rel="stylesheet">
@@ -46,10 +50,10 @@
  <div class="jumbotron" align = "left" >
  	<div class = "bodycontainer">
       <form name "ClientForm">
-        <p>Work Description:</p>
+        <p id = "smallfont" >Name:
         <div id="WorkDescription">
 
-        	<textarea name = "WorkDescription" placeholder = "What do you need done?" rows = '10' cols = '100'></textarea>
+        	<textarea name = "WorkDescription" placeholder = "Name" rows = '1' cols = '100'></textarea>
 
 
         	
@@ -65,6 +69,7 @@
 
 
         </div>
+        </p>
     
 
       <p>Compensation:</p>

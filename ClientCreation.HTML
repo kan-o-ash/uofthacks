@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<style>
+/*#submit {
+	   line-height:10px;
+    background-color:#EEEEEE;
+    height:100px;
+    width:100px;
+    float:right;
+    padding:0px;	
+}*/
+</style>
+  <title>Create a Client Account</title>
+  <link href="css/jobcreate.css" rel="stylesheet">
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">HomeHelp</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+ <div class="jumbotron" align = "left" >
+ 	<div class = "bodycontainer">
+      <form name "ClientForm">
+        <p>Work Description:</p>
+        <div id="WorkDescription">
+
+        	<textarea name = "WorkDescription" placeholder = "What do you need done?" rows = '10' cols = '100'></textarea>
+
+
+        	
+
+      <!--     <form class="navbar-form navbar-left">
+            <div class="formdescript-group" align = "left" >
+            	
+
+              <input type="text" placeholder="What's your job about?" class="formdescript-control" align = "right" maxlength = "140" >
+              
+            </div>
+        </form> -->
+
+
+        </div>
+    
+
+      <p>Compensation:</p>
+      <div>
+      <textarea name = "Compensation" placeholder = "What are you offering your worker?" rows = '2' cols = '50'></textarea>
+  </div>
+
+        <!-- <p> <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-left">
+            <div class="formdescript-group" align = "left" >
+              <input type="text" placeholder="What are you offering your worker?" class="formcompensation-control" align = "right" maxlength = "140">
+            </div>
+        </form>
+        </div>
+    </p> -->
+    <p>Time and Date:</p>
+    <div>
+      <textarea name = "Date" placeholder = "When?" rows = '1' cols = '50'></textarea>
+</div>
+    
+      <p>Location:</p>
+      <div>
+      <textarea name = "Location" placeholder = "Where?" rows = '1' cols = '50'></textarea>
+  </div>
+</form>
+<br></br>
+
+ <!-- <div id = "submit">
+       <button type="submit" class="btn btn-success">Submit</button>
+   </div> -->
+ <div>
+       <button type="submit" class="btn btn-success" onclick = "submitForm()">Submit</button>
+   </div>
+</div>
+
+    </div>
+<script>
+function submitForm(){
+   document.getElementById("ClientForm").submit();
+}
+
+</script>
+</body>
+</html> 

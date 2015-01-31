@@ -12,3 +12,8 @@ coffeescript
 accounts-password
 accounts-facebook
 accounts-twitter
+jquery
+meteorhacks:npm
+
+
+npm-container

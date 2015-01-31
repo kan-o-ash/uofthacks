@@ -1,0 +1,35 @@
+<head>
+
+</head>
+
+<body>
+	<div id="topbar">
+	</div>
+	<div id="content">
+		{{> viewMgr}}
+	</div>
+</body>
+
+<template name="viewMgr">
+	<div id="main-view">
+		{{#if view "home"}}
+		  {{> home}}
+		{{/if}}
+		{{#if loginOverlay "true"}}
+			{{> login}}
+		{{}}
+	</div>
+</template>
+
+<template name="home">
+	<input id="phonenum" type="text"/>
+	<button>click this</button>
+</template>
+
+<template name="profile">
+
+</template>
+
+<template name="login">
+	{{> loginButtons}}
+</template>

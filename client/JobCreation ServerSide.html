@@ -1,64 +1,42 @@
-<template name = "jobCreation">
+<template name = "easyJobCreation">
  <div class = "container">
   <h2>Create a Job</h2>
 
   <div class="jumbotron" align = "left" >
     <div class = "bodycontainer">
-      <form name = "WorkForm">
-        <p>Work Description:</p>
-        <div id="WorkDescription">
 
-          <textarea name = "WorkDescription" placeholder = "What do you need done?" rows = '10' cols = '100'></textarea>
-        </div>
-        <p>Contact Number</p>
-        <div>
-          <textarea name = "Number" placeholder = "Contact Number (optional)" rows = '1' cols = '50'></textarea>
-        </div>
+      <p>Owner</p>
+  <div>
+      <input id = "Owner" type="text" id="myText" placeholder = "Owner" >
+</div>
+      <p>Title</p>
+  <div>
+      <input id = "Title" type="text" id="myText" placeholder = "Title" >
+</div>
+      <p>Status</p>
+  <div>
+      <input id = "Status" type="text" id="myText" placeholder = "Status" >
+</div>
+      <p>OfferedTo</p>
+  <div>
+      <input id = "OfferedTo" type="text" id="myText" placeholder = "OfferedTo" >
+</div>
+      <p>Description</p>
+  <div>
+      <input id = "Description" type="text" id="myText" placeholder = "Description" >
+</div>
+      <p>Amount</p>
+  <div>
+      <input id = "Amount" type="text" id="myText" placeholder = "Amount" >
+</div>
+      <p>DateAndTime</p>
+  <div>
+      <input id = "DateAndTime" type="text" id="myText" placeholder = "DateAndTime" >
+</div>
 
-
-      <!--     <form class="navbar-form navbar-left">
-            <div class="formdescript-group" align = "left" >
-              
-
-              <input type="text" placeholder="What's your job about?" class="formdescript-control" align = "right" maxlength = "140" >
-              
-            </div>
-          </form> -->
-
-
-
-
-
-          <p>Compensation:</p>
-          <div>
-           <textarea name = "Compensation" placeholder = "What are you offering your worker?" rows = '1' cols = '50'></textarea>
-         </div>
-
-        <!-- <p> <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-left">
-            <div class="formdescript-group" align = "left" >
-              <input type="text" placeholder="What are you offering your worker?" class="formcompensation-control" align = "right" maxlength = "140">
-            </div>
-        </form>
-        </div>
-      </p> -->
-      <p>Time and Date:</p>
-      <div>
-        <textarea name = "Date" placeholder = "When?" rows = '1' cols = '50'></textarea>
-      </div>
-
-      <p>Location:</p>
-      <div>
-        <textarea name = "Location" placeholder = "Where?" rows = '1' cols = '50'></textarea>
-      </div>
-    </form>
-    <br>
-
- <!-- <div id = "submit">
-       <button type="submit" class="btn btn-success">Submit</button>
-     </div> -->
+     <br>
      <div>
-       <button type="submit" class="btn btn-success" onclick = "submitForm()">Submit</button>
+       <button type="button" class="btn btn-success" onclick = "submitForm()">Submit</button>
      </div>
    </div>
 
@@ -66,7 +44,26 @@
 </div>
  <script>
  function submitForm(){
-   document.getElementById("WorkForm").submit();
+  var a = document.getElementById("Owner").innerHTML;
+   var b = document.getElementById("Title").innerHTML;
+    var c = document.getElementById("Status").innerHTML;
+     var d = document.getElementById("OfferedTo").innerHTML;
+      var e = document.getElementById("Description").innerHTML;
+       var f = document.getElementById("Amount").innerHTML;
+        var g = document.getElementById("DateAndTime").innerHTML;
+
+
+jobsList.insert({
+  Owner: a, 
+  Title: b,
+  Status: c, 
+  OfferedTo: d,
+  Description: e,
+  Amount: f,
+  DateAndTime: g
+
+})
+   
  }
 
  </script>

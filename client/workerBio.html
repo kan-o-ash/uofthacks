@@ -1,13 +1,11 @@
 <template name="workerBio">
-    <div class="col-md-6">
-        <h2>NAME</h2>
-        <div class="row">
-            <div class="col-md-2">
-                <img src="" height=40px width=40px>
-            </div>
-            <div class="col-md-4">
-                <p>BIO</p>
-            </div>
-        </div>        
+    <div class="container">
+        <h2 class="workername">{{this.services.facebook.name}}</h2>
+        <div class="picturewrap">
+            <img src="https://graph.facebook.com/{{this.services.facebook.id}}/picture?type=large"/>
+        </div>
+        <div class="aboutwrap">
+            <p>{{this.about}}</p>
+        </div>
     </div>
 </template>

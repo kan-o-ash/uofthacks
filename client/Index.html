@@ -1,58 +1,45 @@
 <template name="homecontent">
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>HomeHelp</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        
-        <div class="row">
-          <div class="col-md-6">
-            <p><a class="btn btn-primary btn-lg" href="#" id="signuphome" role="button">Looking for work? &raquo;</a></p>
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>HomeHelp</h1>
+      <p>HomeHelp is a platform that helps bring communities together. We aim to humanize the least privileged of us through story.</p>
+      {{#if curUser}}
+      <div class="row">
+        <div class="col-md-6">
+          <p><a class="btn btn-primary btn-lg" href="/login" id="signuphome" role="button">Looking for work? &raquo;</a></p>
         </div>
         <div class="col-md-6">
-            <p><a class="btn btn-primary btn-lg" href="#" id="signuphelp" role="button">Looking for help? &raquo;</a></p>
+          <p><a class="btn btn-primary btn-lg" href="/login" id="signuphelp" role="button">Looking for help? &raquo;</a></p>
         </div>
+      </div>
+      {{/if}}    
     </div>
-</div>
-</div>
+  </div>
 
-<div class="container">
-  <h2>People Nearby:</h2>
-  <!-- Example row of columns -->
-  <div class="row">
-    <div class="col-md-6">
-        <h2>NAME</h2>
-        <div class="row">
-            <div class="col-md-2">
-                <img src="" height=40px width=40px>
-            </div>
-            <div class="col-md-4">
-                <p>BIO</p>
-            </div>
-        </div>        
+  <div class="container">
+    <h2>Members of your community</h2>
+    <!-- Example row of columns -->
+    <div class="row">
+      {{#each person}}
+        {{> personPic}}
+      {{/each}}
     </div>
-    <div class="col-md-6">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-  </div>
-</div>
-<div class="row">
-    <div class="col-md-6">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-  </div>
-  <div class="col-md-6">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-  </div>
-</div>
-<hr>
+    <footer>
+      <p>&copy; HomeHelp 2015</p>
+    </footer>
+  </div> <!-- /container -->
+</template>
 
-<footer>
-    <p>&copy; HomeHelp 2015</p>
-</footer>
-</div> <!-- /container -->
+<template name="personPic">
+  {{#if this.services.facebook}}
+    <div class="col-md-6">
+      <a href="/profile/{{_id}}">
+        <div class="profile-overlay">
+          <h2 class="overlay-name">{{name}}</h2>
+        </div>
+      </a>
+      <img src="https://graph.facebook.com/{{this.services.facebook.id}}/picture?type=large" >
+    </div>
+  {{/if}}
 </template>

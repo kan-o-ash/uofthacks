@@ -1,6 +1,6 @@
-<template name="workOffer">
+<template name="acceptedJobs">
 
-    {{#each curoffers}}
+    {{#each accepted}}
     
     <div class="row">
         <div class="col-md-12">
@@ -17,30 +17,12 @@
                   
                     <p>Name: {{Owner}}<br>Description: {{Description}}<br>Amount Offered: {{Amount}}<br>Date and Time: {{DateAndTime}}</p>
                     
-                    <p>
-                        <button class="btn btn-primary btn-accept" type="button" onclick="changeFunction()">Accept</button>
-                        
-                        <button class="btn btn btn-decline" type="button" onclick="declineFunction()">Decline</button>
- 
-                     
-                    </p>
+                 
                 </div>
             </div>
         </div>
     </div>
-    <script>
-    function declineFunction(){
-        window.alert("You declined a job! It has been removed from the database.");
-        Meteor.call(sendSMS,["+5148362217"]);
-
-    }
-    </script>
-    <script>
-    function changeFunction(){
-          window.alert("You've accepted a job! You can find it in your accepted jobs page.");
-    
-    }
-    </script>
+ 
 
     {{/each}}
     <hr>

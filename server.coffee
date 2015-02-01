@@ -5,7 +5,8 @@ if Meteor.isServer
   Meteor.publish "currentUserData", ->
     Meteor.users.find {},
       fields:
-        about: 1
+        about: 1,
+        services: 1
 
   accountSid = "AC8ca77fff4937cd2163da438b963717c9"
   authToken = "f2b35f8e684ea383dc806dacee18d806"

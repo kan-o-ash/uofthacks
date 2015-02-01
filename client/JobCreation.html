@@ -1,4 +1,4 @@
-<template name = "jobCreation">
+<template name = "easyJobCreation">
  <div class = "container">
   <h2>Create a Job</h2>
 
@@ -8,40 +8,17 @@
         <p>Work Description:</p>
         <div id="WorkDescription">
 
-          <textarea name = "WorkDescription" placeholder = "What do you need done?" rows = '10' cols = '100'></textarea>
+        <textarea name = "WorkDescription" placeholder="What do you need done?" rows = '10' cols = '100'></textarea>
         </div>
         <p>Contact Number</p>
         <div>
           <textarea name = "Number" placeholder = "Contact Number (optional)" rows = '1' cols = '50'></textarea>
         </div>
 
-
-      <!--     <form class="navbar-form navbar-left">
-            <div class="formdescript-group" align = "left" >
-              
-
-              <input type="text" placeholder="What's your job about?" class="formdescript-control" align = "right" maxlength = "140" >
-              
-            </div>
-          </form> -->
-
-
-
-
-
           <p>Compensation:</p>
           <div>
            <textarea name = "Compensation" placeholder = "What are you offering your worker?" rows = '1' cols = '50'></textarea>
          </div>
-
-        <!-- <p> <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-left">
-            <div class="formdescript-group" align = "left" >
-              <input type="text" placeholder="What are you offering your worker?" class="formcompensation-control" align = "right" maxlength = "140">
-            </div>
-        </form>
-        </div>
-      </p> -->
       <p>Time and Date:</p>
       <div>
         <textarea name = "Date" placeholder = "When?" rows = '1' cols = '50'></textarea>
@@ -53,10 +30,6 @@
       </div>
     </form>
     <br>
-
- <!-- <div id = "submit">
-       <button type="submit" class="btn btn-success">Submit</button>
-     </div> -->
      <div>
        <button type="submit" class="btn btn-success" onclick = "submitForm()">Submit</button>
      </div>
@@ -64,11 +37,5 @@
 
  </div>
 </div>
- <script>
- function submitForm(){
-   document.getElementById("WorkForm").submit();
- }
-
- </script>
 
 </template>

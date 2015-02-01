@@ -1,11 +1,14 @@
 <template name="workerBio">
-    <div class="container">
+    <div class="container workerbio">
         <h2 class="workername">{{this.services.facebook.name}}</h2>
+        <div class="mainbio">
         <div class="picturewrap">
             <img src="https://graph.facebook.com/{{this.services.facebook.id}}/picture?type=large"/>
         </div>
         <div class="aboutwrap">
             <p>{{this.about}}</p>
         </div>
+        </div>
+        <a class="btn btn-primary" type="button" href="/createjob/{{myuserid}}/{{this._id}}">Offer Work</a>
     </div>
 </template>

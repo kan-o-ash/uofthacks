@@ -19,6 +19,7 @@ if (Meteor.isClient)
 
   Template.workOffer.events
     "click .btn-accept": ->
+      jobsList.update({'_id':this._id},{$set:{'Status':'Accepted'}})
       console.log(this._id)
 
     "click .btn-decline": ->

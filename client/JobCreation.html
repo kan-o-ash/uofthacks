@@ -1,20 +1,20 @@
 <template name = "jobCreation">
  <div class = "container">
-<h2>Create a Job</h2>
+  <h2>Create a Job</h2>
 
- <div class="jumbotron" align = "left" >
- 	<div class = "bodycontainer">
-      <form name "WorkForm">
+  <div class="jumbotron" align = "left" >
+    <div class = "bodycontainer">
+      <form name = "WorkForm">
         <p>Work Description:</p>
         <div id="WorkDescription">
 
           <textarea name = "WorkDescription" placeholder = "What do you need done?" rows = '10' cols = '100'></textarea>
         </div>
-          <p>Contact Number</p>
-          <div>
+        <p>Contact Number</p>
+        <div>
           <textarea name = "Number" placeholder = "Contact Number (optional)" rows = '1' cols = '50'></textarea>
-          </div>
-          
+        </div>
+
 
       <!--     <form class="navbar-form navbar-left">
             <div class="formdescript-group" align = "left" >
@@ -23,16 +23,16 @@
               <input type="text" placeholder="What's your job about?" class="formdescript-control" align = "right" maxlength = "140" >
               
             </div>
-        </form> -->
+          </form> -->
 
 
-        
-    
 
-      <p>Compensation:</p>
-      <div>
-       <textarea name = "Compensation" placeholder = "What are you offering your worker?" rows = '1' cols = '50'></textarea>
-  </div>
+
+
+          <p>Compensation:</p>
+          <div>
+           <textarea name = "Compensation" placeholder = "What are you offering your worker?" rows = '1' cols = '50'></textarea>
+         </div>
 
         <!-- <p> <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-left">
@@ -41,33 +41,34 @@
             </div>
         </form>
         </div>
-    </p> -->
-    <p>Time and Date:</p>
-    <div>
-      <textarea name = "Date" placeholder = "When?" rows = '1' cols = '50'></textarea>
-</div>
-    
+      </p> -->
+      <p>Time and Date:</p>
+      <div>
+        <textarea name = "Date" placeholder = "When?" rows = '1' cols = '50'></textarea>
+      </div>
+
       <p>Location:</p>
       <div>
-      <textarea name = "Location" placeholder = "Where?" rows = '1' cols = '50'></textarea>
-  </div>
-</form>
-<br></br>
+        <textarea name = "Location" placeholder = "Where?" rows = '1' cols = '50'></textarea>
+      </div>
+    </form>
+    <br>
 
  <!-- <div id = "submit">
        <button type="submit" class="btn btn-success">Submit</button>
-   </div> -->
- <div>
+     </div> -->
+     <div>
        <button type="submit" class="btn btn-success" onclick = "submitForm()">Submit</button>
+     </div>
    </div>
+
+ </div>
 </div>
-
-    </div>
-<script>
-function submitForm(){
+ <script>
+ function submitForm(){
    document.getElementById("WorkForm").submit();
-}
+ }
 
-</script>
+ </script>
 
 </template>

@@ -10,11 +10,9 @@ body {
 }
 
 #topBar {
-	height: 50px;
-	background: #ddd;
 }
 
-#content {
-	height: 50px;
-	background: #ddd;
+/* just so bootstrap doesn't screw with our divs */
+#content, #main-view, #homepage {
+	padding: 0;
 }

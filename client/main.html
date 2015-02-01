@@ -1,0 +1,16 @@
+<head>
+
+</head>
+
+<body>
+  {{> yield}}
+</body>
+
+<template name="appLayout">
+  {{> topBar}}
+	{{> yield "main"}}	
+	<div id="overlay">
+		{{> yield "overlay"}}
+	</div>	
+</template>
+

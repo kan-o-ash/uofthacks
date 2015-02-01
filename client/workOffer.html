@@ -1,21 +1,45 @@
 <template name="workOffer">
+
+    {{#each curoffers}}
+    
     <div class="row">
         <div class="col-md-12">
-            <h2>WORK TITLE</h2>
+            <h2>{{Title}}</h2>
             <div class="row">
                 <div class="col-md-2">
-                    <img src="PHOTO" height="150" width="150">
+                   <div>
+                    <img src={{Picture}} height="150" width="150" padding-bottom="15px">
+               </div>
+                <br>
                     <button class="btn btn-primary" type="button">View Profile</button>
                 </div>
-                <div class="col-md-9">
-                    <p>Name: NAME<br>Description: DESCRIPTION<br>Amount Offered: AMOUNT<br>Date: DATE<br>Time: TIME</p>
+                <div class="col-md-9 work-item" _id="{{_id}}">
+                  
+                    <p>Name: {{Owner}}<br>Description: {{Description}}<br>Amount Offered: {{Amount}}<br>Date and Time: {{DateAndTime}}</p>
+                    
                     <p>
-                        <button class="btn btn-primary" type="button">Accept</button>
-                        <button class="btn" href="Index.html" type="button">Decline</button>
+                        <button class="btn btn-primary btn-accept" type="button">Accept</button>
+                        
+                        <button class="btn btn btn-decline" type="button" onclick="declineFunction()">Decline</button>
+ 
+                     
                     </p>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    function declineFunction(){
+        window.alert("You declined a job! It has been removed from the database.");
+    }
+    </script>
+
+    {{/each}}
     <hr>
+   
 </template>
+
+
+
+
+

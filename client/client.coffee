@@ -15,7 +15,8 @@ if (Meteor.isClient)
   Template.workOffer.helpers
     curoffers: ->
       jobsList.find({'OfferedTo': Meteor.user().profile.name}).fetch()
-
+    accepted: ->
+   jobsList.find({'OfferedTo': Meteor.user().profile.name}, {'Status' : "Accepted"}).fetch()
 
   Template.workOffer.events
     "click .btn-accept": ->

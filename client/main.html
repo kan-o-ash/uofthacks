@@ -2,15 +2,24 @@
 
 </head>
 
-<body>
-  {{> yield}}
-</body>
-
-<template name="appLayout">
-  {{> topBar}}
-	{{> yield "main"}}	
+<template name="defaultLayout">
+	<div>
+	  {{> topBar}}
+	  <div style="margin-top:50px;">
+			{{> yield "main"}}
+		</div>
+	</div>
 	<div id="overlay">
-		{{> yield "overlayp"}}
+		{{> yield "overlay"}}
 	</div>	
 </template>
 
+<template name="home">
+	<div>
+		{{>homecontent}}
+	</div>
+</template>
+
+<template name="diff">
+	bye
+</template>

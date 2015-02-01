@@ -1,5 +1,11 @@
+  layout = new Iron.Layout(
+    template: 'appLayout'
+  )
+
   Meteor.startup ->
-    Session.set("view","home")
+
+    layout.render('home', {to: 'main'})
+
     return
 
   Template.viewMgr.helpers
@@ -10,7 +16,8 @@
       return false
 
   Template.viewMgr.goToView = (view) ->
-    Session.set('view', view)
+    console.log(Router.current())
+    Router.route('/login');
 
   Template.viewMgr.showOverlay = (overlay) ->
     Session.set('view', overlay)
@@ -29,7 +36,7 @@
     "click #signuphelp": ->
       Template.viewMgr.showOverlay("login")
 
-  
+
   Accounts.ui.config
     requestPermissions:
       facebook: [

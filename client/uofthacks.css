@@ -27,7 +27,7 @@ body {
 	width: 100%;
 }
 
-#home_cont .col-md-6 {
+#home_cont #container .col-md-6 {
 	height: 400px !important;
 	overflow: hidden !important;
 }
@@ -64,11 +64,40 @@ body {
 	width: auto;
 }
 
+.overlay-name {
+	color: "hotpink";
+}
+
 .workerbio .mainbio > *{
 	display: inline-block;
 	float: left;
 	max-width: 70%;
 	margin-right: 5%;
+}
+
+.navbar-header {
+	width: auto;
+}
+
+.navbar-header:hover {
+	opacity: 0.8;
+}
+
+#bryan {
+	float: left;
+	display: inline-block;
+	height: 50px;
+}
+
+.navbar-brand {
+	display: inline-block;
+	background: #fff;
+	color: black !important;
+	margin-left: 0 !important;
+}
+
+.navbar-brand:hover {
+	background: #fff !important;
 }
 
 img {

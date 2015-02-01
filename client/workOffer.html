@@ -8,14 +8,14 @@
             <div class="row">
                 <div class="col-md-2">
                    <div>
-                    <img src={{Picture}} height="150" width="150" padding-bottom="15px">
+                    <img src={{picture}} height="150" width="150" padding-bottom="15px">
                </div>
                 <br>
                     <button class="btn btn-primary" type="button">View Profile</button>
                 </div>
                 <div class="col-md-9 work-item" _id="{{_id}}">
                   
-                    <p>Name: {{Owner}}<br>Description: {{Description}}<br>Amount Offered: {{Amount}}<br>Date and Time: {{DateAndTime}}</p>
+                    <p>Name: {{jobowner}}<br>Description: {{Description}}<br>Amount Offered: {{Amount}}<br>Date and Time: {{DateAndTime}}</p>
                     
                     <p>
                         <button class="btn btn-primary btn-accept" type="button" onclick="changeFunction()">Accept</button>
@@ -31,7 +31,7 @@
     <script>
     function declineFunction(){
         window.alert("You declined a job! It has been removed from the database.");
-        Meteor.call(sendSMS,["+5148362217"]);
+        // Mteeor.call(sendSMS,["+5148362217"]);
 
     }
     </script>

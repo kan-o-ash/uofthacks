@@ -4,34 +4,34 @@
 
   <div class="jumbotron" align = "left" >
     <div class = "bodycontainer">
-      <form name = "WorkForm">
+      <form name = "WorkForm" id="jobForm">
         <p>Work Description:</p>
-        <div id="WorkDescription">
+        <div >
 
-        <textarea name = "WorkDescription" placeholder="What do you need done?" rows = '10' cols = '100'></textarea>
+          <textarea id = "WorkDescription" placeholder="What do you need done?" rows = '10' cols = '100'></textarea>
         </div>
         <p>Contact Number</p>
         <div>
-          <textarea name = "Number" placeholder = "Contact Number (optional)" rows = '1' cols = '50'></textarea>
+          <textarea id = "Number" placeholder = "Contact Number (optional)" rows = '1' cols = '50'></textarea>
         </div>
 
           <p>Compensation:</p>
           <div>
-           <textarea name = "Compensation" placeholder = "What are you offering your worker?" rows = '1' cols = '50'></textarea>
+           <textarea id = "Compensation" placeholder = "What are you offering your worker?" rows = '1' cols = '50'></textarea>
          </div>
       <p>Time and Date:</p>
       <div>
-        <textarea name = "Date" placeholder = "When?" rows = '1' cols = '50'></textarea>
+        <textarea id = "Date" placeholder = "When?" rows = '1' cols = '50'></textarea>
       </div>
 
       <p>Location:</p>
       <div>
-        <textarea name = "Location" placeholder = "Where?" rows = '1' cols = '50'></textarea>
+        <textarea id = "Location" placeholder = "Where?" rows = '1' cols = '50'></textarea>
       </div>
     </form>
     <br>
      <div>
-       <button type="submit" class="btn btn-success" onclick = "submitForm()">Submit</button>
+       <button type="submit" class="btn btn-success" id="submitJob">Submit</button>
      </div>
    </div>
 

@@ -2,16 +2,17 @@ Meteor.subscribe("currentUserData")
 
 Meteor.startup ->
   # Router.render('home', {to:'main'})
+  # Meteor.call('sendSMS', '+16477090734', 'sup')
 
 Template.home.events
   "click #signuphome": ->
-    Session.set("login_overlay_on","true")
-  "click #signuphome": ->
-    Session.set("login_overlay_on","true")
+    $("#login-sign-in-link").click()
+  "click #signuphelp": ->
+    $("#login-sign-in-link").click()
 
 Template.topBar.helpers
   userid:->
-    Meteor.user()._id
+    return Meteor.userId()
 
 Template.homecontent.helpers
   curUser: ->
@@ -29,16 +30,35 @@ Template.workerBio.helpers
 
 Template.workOffer.helpers
   curoffers: ->
-    jobsList.find({'OfferedTo': Meteor.user().name,'Status':'Offered'}).fetch()
+    jobsList.find({'OfferedTo': Meteor.userId(),'Status':'Offered'}).fetch()
+
+  jobowner: ->
+    Meteor.call('getName', this.Owner)
+
+  picture: ->
+    id = this.Owner
+    owner_fb_id = Meteor.users.findOne(_id:id).services.facebook.id
+    return "https://graph.facebook.com/" + owner_fb_id + "/picture?type=large"
+
 
 Template.workOffer.events
   "click .btn-accept": ->
     jobsList.update({'_id':this._id},{$set:{'Status':'Accepted'}})
     console.log(this._id)
+    offering_id = Meteor.userId()
+    offering_num = Meteor.user().number
+    Meteor.call("sendSMS", client_id, offering_id)
+    Meteor.call("sendSMSAccepted", client_id, offering_id)
+    Meteor.call("sendSMSYouAccepted", offering_id, client_id)
 
   "click .btn-decline": ->
     jobsList.remove(this._id)
     console.log(this._id)
+
+    offering_id = Meteor.userId()
+    client_id = this.Owner
+    Meteor.call("sendSMS", Meteor.users.findOne({_id:'BEdgJcKqtKBsDgyBf'}).number , 'it fully worked')
+    # Meteor.call("sendSMSDeclined", client_id, offering_id)
 
 Template.acceptedJobs.helpers
   accepted: ->

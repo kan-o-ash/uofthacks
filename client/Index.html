@@ -3,14 +3,14 @@
   <div class="jumbotron">
     <div class="container">
       <h1>HomeHelp</h1>
-      <p>HomeHelp is a platform that helps bring communities together. We aim to humanize the least privileged of us through story.</p>
+      <p>HomeHelp is a platform that brings communities together. With it, we aim to humanize the underprivileged through their stories and their service. Find the less fortunate living in your area, read their stories, and build your communities together - HomeHelp enables you to reach out and offer short-term work and wage to those who, through their invisibility, may not have been able to earn it otherwise. Work together. Live together. Grow together.</p>
       {{#if curUser}}
       <div class="row">
         <div class="col-md-6">
-          <p><a class="btn btn-primary btn-lg" href="/login" id="signuphome" role="button">Looking for work? &raquo;</a></p>
+          <p><button class="btn btn-primary btn-lg" href="/login" id="signuphome" role="button">Looking for work? &raquo;</button></p>
         </div>
         <div class="col-md-6">
-          <p><a class="btn btn-primary btn-lg" href="/login" id="signuphelp" role="button">Looking for help? &raquo;</a></p>
+          <p><button class="btn btn-primary btn-lg" href="/login" id="signuphelp" role="button">Looking for help? &raquo;</button></p>
         </div>
       </div>
       {{/if}}    
@@ -32,11 +32,11 @@
 </template>
 
 <template name="personPic">
-  {{#if this.services.facebook}}
+  {{#if this.profile}}
     <div class="col-md-6">
       <a href="/profile/{{_id}}">
         <div class="profile-overlay">
-          <h2 class="overlay-name">{{this.services.facebook.name}}</h2>
+          <h2 class="overlay-name">{{this.profile.name}}</h2>
         </div>
       </a>
       <img src="https://graph.facebook.com/{{this.services.facebook.id}}/picture?type=large" >

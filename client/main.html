@@ -1,0 +1,22 @@
+<head>
+
+</head>
+
+<template name="defaultLayout">
+	<div>
+	  {{> topBar}}
+	  <div style="margin-top:50px;">
+			{{> yield "main"}}
+		</div>
+	</div>
+</template>
+
+<template name="home">
+	<div id="home_cont">
+		{{>homecontent}}
+	</div>
+</template>
+
+<template name="diff">
+	bye
+</template>

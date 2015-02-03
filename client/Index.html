@@ -1,0 +1,45 @@
+<template name="homecontent">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>HomeHelp</h1>
+      <p>HomeHelp is a platform that brings communities together. With it, we aim to humanize the underprivileged through their stories and their service. Find the less fortunate living in your area, read their stories, and build your communities together - HomeHelp enables you to reach out and offer short-term work and wage to those who, through their invisibility, may not have been able to earn it otherwise. Work together. Live together. Grow together.</p>
+      {{#if curUser}}
+      <div class="row">
+        <div class="col-md-6">
+          <p><button class="btn btn-primary btn-lg" href="/login" id="signuphome" role="button">Looking for work? &raquo;</button></p>
+        </div>
+        <div class="col-md-6">
+          <p><button class="btn btn-primary btn-lg" href="/login" id="signuphelp" role="button">Looking for help? &raquo;</button></p>
+        </div>
+      </div>
+      {{/if}}    
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Members of your community</h2>
+    <!-- Example row of columns -->
+    <div class="row">
+      {{#each person}}
+        {{> personPic}}
+      {{/each}}
+    </div>
+    <footer>
+      <p>&copy; HomeHelp 2015</p>
+    </footer>
+  </div> <!-- /container -->
+</template>
+
+<template name="personPic">
+  {{#if this.profile}}
+    <div class="col-md-6">
+      <a href="/profile/{{_id}}">
+        <div class="profile-overlay">
+          <h2 class="overlay-name">{{this.profile.name}}</h2>
+        </div>
+      </a>
+      <img src="https://graph.facebook.com/{{this.services.facebook.id}}/picture?width=540&amp;height=300" >
+    </div>
+  {{/if}}
+</template>

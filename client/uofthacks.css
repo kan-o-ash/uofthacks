@@ -27,9 +27,13 @@ body {
 	width: 100%;
 }
 
-#home_cont #container .col-md-6 {
-	height: 400px !important;
-	overflow: hidden !important;
+#home_cont .container .col-md-6 {
+	width: 50%;
+	padding: 0;
+}
+
+#home_cont .container .col-md-6 h2 {
+	color: hotpink;
 }
 
 #home_cont .profile-overlay {
@@ -62,10 +66,6 @@ body {
 
 .workerbio .picturewrap {
 	width: auto;
-}
-
-.overlay-name {
-	color: "hotpink";
 }
 
 .workerbio .mainbio > *{

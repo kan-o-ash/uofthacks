@@ -10,7 +10,7 @@ Template.easyJobCreation.events
     console.log(this)
 
     jobsList.insert(
-      Description: desc
+      Description: descw
       Status: "Offered"
       Amount: comp
       DateAndTime: date
@@ -21,4 +21,7 @@ Template.easyJobCreation.events
     Meteor.call('updatePhone', Meteor.userId(), num)
     console.log(this.to)
     alert("Thank you! We will let you know when we hear back from " + Meteor.users.findOne({_id:this.to}).profile.name)
+
     $(".navbar-brand").click()
+
+
